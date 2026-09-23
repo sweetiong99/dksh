@@ -1,0 +1,25 @@
+specVersion: "4.0"
+metadata:
+  name: com.test.project02
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4D00
+          url: http://s4d00:443
+          client: "100"
+        app:
+          name: ZTEST_PROJECT02
+          description: Testing Application
+          package: ZTEST
+          transport: D00K9F8JIX
+        exclude:
+          - /test/
+          - /localService/

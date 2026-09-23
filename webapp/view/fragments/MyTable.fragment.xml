@@ -39,7 +39,7 @@
                     </t:template>
                 </t:Column>
                 <t:Column width="15rem" filterProperty="ProductDescription" sortProperty="ProductDescription">
-                    <Label text="ProductDescription"/>
+                    <Label text="Product Description"/>
                     <t:template>
                         <Text text="{MainModel>ProductDescription}" wrapping="false" />
                     </t:template>
@@ -51,23 +51,24 @@
                     </t:template>
                 </t:Column>
                 <t:Column width="15rem" filterProperty="ProductTypeName" sortProperty="ProductTypeName">
-                    <Label text="ProductTypeName"/>
+                    <Label text="Product Type Name"/>
                     <t:template>
                         <Text text="{MainModel>ProductTypeName}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="10rem" filterProperty="ProductGroup" sortProperty="ProductGroup">
-                    <Label text="ProductGroup"/>
+                    <Label text="Product Group"/>
                     <t:template>
                         <Text text="{MainModel>ProductGroup}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="15rem" filterProperty="ProductGroupName" sortProperty="ProductGroupName">
-                    <Label text="ProductGroupName"/>
+                    <Label text="Product Group Name"/>
                     <t:template>
                         <Text text="{MainModel>ProductGroupName}" wrapping="false" />
                     </t:template>
                 </t:Column>
+
             </t:columns>
             <t:footer>
                 <OverflowToolbar class="sapUiTinyMarginBottom tooltransp"></OverflowToolbar>
