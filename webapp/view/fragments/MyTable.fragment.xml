@@ -63,12 +63,11 @@
                     </t:template>
                 </t:Column>
                 <t:Column width="15rem" filterProperty="ProductGroupName" sortProperty="ProductGroupName">
-                    <Label text="Product Group Name"/>
+                    <Label text="Product Group Name" wrapping="true"/>
                     <t:template>
                         <Text text="{MainModel>ProductGroupName}" wrapping="false" />
                     </t:template>
                 </t:Column>
-
             </t:columns>
             <t:footer>
                 <OverflowToolbar class="sapUiTinyMarginBottom tooltransp"></OverflowToolbar>
