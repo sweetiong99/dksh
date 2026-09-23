@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns="sap.m">
+    <Page showHeader="false" class="sapUiNoContentPadding sapUiNoMargin">
+        <subHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button id="btnSave" type="Ghost" icon="sap-icon://save" press="onSaveTravel" tooltip="save"/>
+                <Button id="btnFullScreen" type="Transparent" icon="sap-icon://full-screen" press="onHandleFullScreen" tooltip="{i18n>tooltip_enter}"/>
+                <Button id="btnExitFullScreen" type="Transparent" icon="sap-icon://exit-full-screen" press="onHandleExitFullScreen" tooltip="{i18n>tooltip_exit}"/>
+                <Button id="idBtnCloseFlex" type="Transparent" icon="sap-icon://decline" press="onCloseSideScreen" tooltip="{i18n>tooltip_close_detail}"/>
+            </Toolbar>
+        </subHeader>
+        <content>
+        <f:Form id="frmTravel" editable="true">
+            <f:layout>
+                <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="2" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="4" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="true"/>
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="ID">
+                            <f:fields>
+                                <Input value="{MainModel>Id}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{MainModel>Name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Age">
+                            <f:fields>
+                                <Input value="{MainModel>Age}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+    </content>
+</Page>
+</core:FragmentDefinition>

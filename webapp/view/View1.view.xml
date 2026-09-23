@@ -1,0 +1,43 @@
+<mvc:View controllerName="com.test.project02.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <!--
+    <f:DynamicPage id="dypMain" headerExpanded="false" class="sapUiNoMargin sapUiNoContentPadding" showFooter="true">
+        <f:content>
+            <core:Fragment fragmentName="com.test.project02.view.fragments.MyTable" type="XML" />
+        </f:content>
+    </f:DynamicPage>
+-->
+    <f:FlexibleColumnLayout layout="OneColumn" backgroundDesign="Transparent" stateChange="onStateChanged" id="idFlexColProj" class="sapUiNoMargin sapUiNoPadding">
+		<f:beginColumnPages >
+			<f:DynamicPage  headerExpanded="false" class="sapUiNoMargin sapUiNoContentPadding">
+				<f:title></f:title>
+				<f:content>
+					<core:Fragment fragmentName="com.test.project02.view.fragments.MyTable" type="XML"/>
+				</f:content>
+			</f:DynamicPage>
+		</f:beginColumnPages>
+		<f:midColumnPages>
+			<f:DynamicPage id="pageProjForm" class="sapUiNoMargin sapUiNoContentPadding">
+				<f:title>
+					<!--
+					<f:DynamicPageTitle>
+						<f:actions class="sapUiNoMargin sapUiNoContentPadding">
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://save" text="Save" press="onAdd" tooltip="{i18n>saveBtn}" type="Emphasized"/>
+							<Button id="btnFullScrEdit1" type="Transparent" icon="sap-icon://full-screen" press="onHandleFullScreen" tooltip="{i18n>tooltip_enter}"/>
+							<Button id="btnExitFullScrEdit1" type="Transparent" icon="sap-icon://exit-full-screen" press="onHandleExitFullScreen" tooltip="{i18n>tooltip_exit}"/>
+							<Button type="Transparent" icon="sap-icon://decline" press="onCloseSideScreen" tooltip="{i18n>tooltip_close_detail} YY"/>
+						</f:actions>
+					</f:DynamicPageTitle>
+				-->
+				</f:title>
+				<f:content>
+					<core:Fragment fragmentName="com.test.project02.view.fragments.EditForm" type="XML"/>
+				</f:content>
+			</f:DynamicPage>
+		</f:midColumnPages>
+	</f:FlexibleColumnLayout>
+</mvc:View>

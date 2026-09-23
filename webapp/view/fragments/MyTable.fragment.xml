@@ -1,0 +1,60 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:t="sap.ui.table" >
+    <Page showHeader="true" showFooter="false">
+        <customHeader>
+            <Toolbar>
+                <Text text="Total row(s): {= ${MainModel>/PROJECT/COUNT} !== undefined? ${MainModel>/PROJECT/COUNT}:0 }" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                <Button type="Transparent" icon="sap-icon://clear-filter" press="onClearFilter($event, 'tblProject')" tooltip="{i18n>clearFilterBtn}"/>
+                <Button type="Transparent" icon="sap-icon://refresh" press="onRefresh" text="Refresh" tooltip="Refresh"/>
+                <Button type="Transparent" icon="sap-icon://download" press="onExport" text="Download" tooltip="Download Excel File" />
+                <ToolbarSpacer/>
+
+                <Button type="Emphasized" icon="sap-icon://add" press="onAdd" text="Add" tooltip="Add"/>
+                <Button type="Emphasized" icon="sap-icon://forward" press="onGoToRAP" text="Go To RAP" tooltip="RAP"/>
+                <Button type="Emphasized" icon="sap-icon://forward" press="onGoToSmart" text="Go To Smart" tooltip="Smart" class="sapUiSmallMarginEnd"/>
+            </Toolbar>
+        </customHeader>
+        <content>
+        <t:Table id="tblTravel" rows="{path:'MainModel>/PersonSet', templateShareable :false}" selectionMode="None" fixedColumnCount="3" rowSelectionChange="onTableSelectionChange" enableSelectAll="false" visibleRowCountMode="Auto" alternateRowColors="true" showNoData="true" noData="No results found">
+            <t:rowSettingsTemplate>
+                <t:RowSettings highlight="{= ${MainModel>IS_SELECTED} === true ? 'Success' : 'None' }"/>
+            </t:rowSettingsTemplate>
+            <t:columns>
+                <t:Column width="6rem" filterProperty="Id" sortProperty="Id">
+                    <Label text="ID"/>
+                    <t:template>
+                        <Text text="{MainModel>Id}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="8rem">
+                    <Label text="Action"/>
+                    <t:template>
+                        <HBox>
+                            <Button press="onEdit" type="Transparent" tooltip="Edit" icon="sap-icon://edit" enabled="{MainModel>IS_ENABLED_EDIT}" />
+                            <Button press="onDelete" type="Transparent" tooltip="Delete" icon="sap-icon://delete" enabled="{MainModel>IS_ENABLED_DELETE}" />
+                        </HBox>
+                    </t:template>
+                </t:Column>
+                <t:Column width="6rem" filterProperty="Name" sortProperty="Name">
+                    <Label text="Name"/>
+                    <t:template>
+                        <Text text="{MainModel>Name}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="10rem">
+                    <Label text="Age"/>
+                    <t:template>
+                        <Text text="{MainModel>Age}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+            </t:columns>
+            <t:footer>
+                <OverflowToolbar class="sapUiTinyMarginBottom tooltransp"></OverflowToolbar>
+            </t:footer>
+        </t:Table>
+        </content>
+    </Page>
+</core:FragmentDefinition>
