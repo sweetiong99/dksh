@@ -18,15 +18,15 @@
             </Toolbar>
         </customHeader>
         <content>
-        <t:Table id="tblTravel" rows="{path:'MainModel>/PersonSet', templateShareable :false}" selectionMode="None" fixedColumnCount="3" rowSelectionChange="onTableSelectionChange" enableSelectAll="false" visibleRowCountMode="Auto" alternateRowColors="true" showNoData="true" noData="No results found">
+        <t:Table id="tblTravel" rows="{path:'MainModel>/ClassifiedProductSet', templateShareable :false}" selectionMode="None" fixedColumnCount="3" rowSelectionChange="onTableSelectionChange" enableSelectAll="false" visibleRowCountMode="Auto" alternateRowColors="true" showNoData="true" noData="No results found">
             <t:rowSettingsTemplate>
                 <t:RowSettings highlight="{= ${MainModel>IS_SELECTED} === true ? 'Success' : 'None' }"/>
             </t:rowSettingsTemplate>
             <t:columns>
-                <t:Column width="6rem" filterProperty="Id" sortProperty="Id">
-                    <Label text="ID"/>
+                <t:Column width="10rem" filterProperty="Id" sortProperty="Id">
+                    <Label text="Product"/>
                     <t:template>
-                        <Text text="{MainModel>Id}" wrapping="false" />
+                        <Text text="{MainModel>Product}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="8rem">
@@ -38,16 +38,34 @@
                         </HBox>
                     </t:template>
                 </t:Column>
-                <t:Column width="6rem" filterProperty="Name" sortProperty="Name">
-                    <Label text="Name"/>
+                <t:Column width="15rem" filterProperty="ProductDescription" sortProperty="ProductDescription">
+                    <Label text="ProductDescription"/>
                     <t:template>
-                        <Text text="{MainModel>Name}" wrapping="false" />
+                        <Text text="{MainModel>ProductDescription}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="10rem">
-                    <Label text="Age"/>
+                <t:Column width="10rem" filterProperty="ProductType" sortProperty="ProductType">
+                    <Label text="ProductType"/>
                     <t:template>
-                        <Text text="{MainModel>Age}" wrapping="false" />
+                        <Text text="{MainModel>ProductType}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="15rem" filterProperty="ProductTypeName" sortProperty="ProductTypeName">
+                    <Label text="ProductTypeName"/>
+                    <t:template>
+                        <Text text="{MainModel>ProductTypeName}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="10rem" filterProperty="ProductGroup" sortProperty="ProductGroup">
+                    <Label text="ProductGroup"/>
+                    <t:template>
+                        <Text text="{MainModel>ProductGroup}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="15rem" filterProperty="ProductGroupName" sortProperty="ProductGroupName">
+                    <Label text="ProductGroupName"/>
+                    <t:template>
+                        <Text text="{MainModel>ProductGroupName}" wrapping="false" />
                     </t:template>
                 </t:Column>
             </t:columns>

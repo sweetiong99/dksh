@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZTEST_NST_ODATA_SRV/",
+        "uri": "/sap/opu/odata/sap/ZTEST_CLSPROD_DISPS_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
